@@ -31,7 +31,8 @@ URLS
   * Add: POST `/projects`
   * Delete: REMOVE `/projects/1`
 * `?page=` & `?perPage=` for url pagination params. Example: `?page=2&perPage=10`
-* `?orderBy=` for sort / ordering. Example: `?orderBy=submittedAt:ASC,totalPrice:DESC`.
-* `?select=` for partial responses. Example: `?select=Project.{id,title}` 
+* `?select=` for partial responses. Example: `?select[0]['entity']=Project&select[0]['props'][]=id&select[0]['props'][]=title`
+* `?where=` for query criteria. Example: `?where[titleLike]=Proj`
+* `?orderBy=` for sort / ordering. Example: `?orderBy[0]['prop']=submittedAtorderBy[0]['sort']=ASC`
   * https://developers.google.com/youtube/2.0/developers_guide_protocol_partial
   * http://docs.doctrine-project.org/en/latest/reference/partial-objects.html
