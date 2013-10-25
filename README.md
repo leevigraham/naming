@@ -12,27 +12,3 @@ Objects
 * `Interval`: A repeating unit in a `Period`. Example: `P2W` http://php.net/manual/en/class.dateinterval.php
 * `Range`: An array of elements with a predefined set of steps
 * `Criteria`: Any kind of condition / clause for searches, where statements etc
-
-Relationships
--------------
-
-* Access major relationships through repository methods rather than getters.
-  * Smaller joins on initial object load
-  * Allows filtering on relationship
-* Consider  [preloading loading `many to one` and `one to one`](http://whitewashing.de/2013/02/19/extending_symfony2__paramconverter.html)
-
-URLS
-----
-
-* *BREAD* is preferable to CRUD. Browse, Read, Edit, Add, Delete
-  * Browse: GET `/projects`
-  * Read: GET `/projects/1`
-  * Edit: PATCH `/projects/1`
-  * Add: POST `/projects`
-  * Delete: REMOVE `/projects/1`
-* `?page=` & `?perPage=` for url pagination params. Example: `?page=2&perPage=10`
-* `?select=` for partial responses. Example: `?select[0]['entity']=Project&select[0]['props'][]=id&select[0]['props'][]=title`
-* `?where=` for query criteria. Example: `?where[titleLike]=Proj`
-* `?orderBy=` for sort / ordering. Example: `?orderBy[0]['prop']=submittedAtorderBy[0]['sort']=ASC`
-  * https://developers.google.com/youtube/2.0/developers_guide_protocol_partial
-  * http://docs.doctrine-project.org/en/latest/reference/partial-objects.html
