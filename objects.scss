@@ -1,0 +1,282 @@
+/**
+ * Variables
+ */
+
+// Colours. Example green:
+$green-lightest:        #89B100;
+$green-lighter:         #d4df48;
+$green-light:           #bfd03f;
+$green:                 #a9c036;
+$green-dark:            #94b02d;
+$green-darker:          #768d24;
+$green-darkest:         #596a1b;
+$green-quiet:           mix($green, white , 10);
+$green-quiet-border:    $green;
+
+// Spacing
+$spacing-xxsmall:   2px;
+$spacing-xsmall:    4px;
+$spacing-small:     8px;
+$spacing-medium:    16px;
+$spacing-large:     32px;
+$spacing-xlarge:    64px;
+$spacing-xxlarge:   128px;
+
+$lineHeight-xsmall: 1;
+$lineHeight-small:  1.25;
+$lineHeight-medium: 1.5;
+$lineHeight-large:  1.75;
+$lineHeight-xlarge: 2;
+
+// Font Sizes
+$fontSize-xxsmall:  9px;
+$fontSize-xsmall:   10px;
+$fontSize-small:    13px;
+$fontSize-medium:   16px;
+$fontSize-large:    20px;
+$fontSize-xlarge:   24px;
+$fontSize-xxlarge:  32px;
+
+// breakpoints
+$bp-phone:          480px;
+$bp-tablet:         768px;
+$bp-desktop:        1024px;
+$bp-desktop-large:  1440px;
+
+// Unit - Combine with GridCell or other elements.
+// Combined with media queries pseudo
+@mixin FractionalWidths($fractions, $suffix: "", $prefix: "unit-") {
+    @each $fraction in $fractions {
+        @for $i from 1 through $fraction {
+            .#{$prefix}#{$i}of#{$fraction}#{$suffix} {
+                width: percentage($i / $fraction);
+            }
+            .#{$prefix}pull#{$i}of#{$fraction}#{$suffix} {
+                right: percentage($i / $fraction);
+            }
+            .#{$prefix}push#{$i}of#{$fraction}#{$suffix} {
+                left: percentage($i / $fraction);
+            }
+        }
+    }
+}
+
+div[class*="unit-"] {
+  box-sizing: border-box;
+  background: #999;
+  border:1px solid #333;
+  float: left;
+  padding: 10px;
+  height: 20px
+}
+
+@include FractionalWidths(12);
+
+@media all and (min-width: 768px) {
+  div[class*="unit-"] {
+    background: #777;
+  }
+  @include FractionalWidths($fractions: 4, $prefix: "unit-", $suffix:"\@medium");
+}
+
+@media all and (min-width: 1024px) {
+  div[class*="unit-"] {
+    background: #555;
+  }
+  @include FractionalWidths($fractions: 4, $prefix: "unit-", $suffix:"\@large");
+}
+
+// Padding
+.padding-xsmall{}
+.padding-small{}
+.padding-medium{}
+.padding-large{}
+.padding-xlarge{}
+
+.pullLeft{}
+.pullRight{}
+
+// Global
+.is-loading{}
+.is-hidden{}
+.is-collapsed{}
+.is-expanded{}
+.is-fullscreen{}
+
+// JS hooks
+.js-canCollapse{}
+.js-canExapnd{}
+.js-canFullScreen{}
+
+.js-collapseTrigger{}
+.js-expandTrigger{}
+.js-fullscreenTrigger{}
+
+// NavItem
+.is-current{}
+
+// Form, ControlGroup, Control
+.is-valid{}
+.is-invalid{}
+.is-readonly{}
+.is-disabled{}
+
+// Control
+.is-focused{}
+.is-hovered{}
+.is-active{}
+
+// Modules
+.Alert{}
+.Alert--info{}
+.Alert--success{}
+.Alert--warning{}
+.Alert--danger{}
+.Alert-dismissTrigger{}
+
+.Avatar{}
+
+.Badge{}
+.Badge--info{}
+.Badge--success{}
+.Badge--warning{}
+.Badge--danger{}
+
+.ButtonGroup{}
+
+.Button{}
+.Button--block{}
+.Button--info{}
+.Button--success{}
+.Button--warning{}
+.Button--link{}
+
+.Card{}
+.Card-front{}
+.Card-back{}
+.Card-header{}
+.Card-body{}
+.Card-footer{}
+
+.Cart{}
+.Cart-itemCount{}
+.Cart-itemTotal{}
+.Cart-itemCollection{}
+.Cart-header{}
+.Cart-body{}
+.Cart-footer{}
+
+.Figure{}
+.Figure-content{}
+.Figure-caption{}
+
+.Flyout{}
+
+.Form{}
+.Form-header{}
+.Form-body{}
+.Form-footer{}
+
+.ControlGroup{}
+.ControlGroup-label{}
+.ControlGroup-description{}
+.ControlGroup-controls{}
+
+.Control{}
+.Control-label{}
+.Control-description{}
+
+.ControlInput{}
+.ControlInput--text{}
+.ControlInput--email{}
+.ControlInput--textarea{}
+.ControlInput--select{}
+.ControlInput--selectMulti{}
+.ControlInput--checkbox{}
+.ControlInput--radio{}
+.ControlInput--search{}
+.ControlInput--date{}
+.ControlInput--time{}
+.ControlInput--comboBox{}
+
+.Grid{}
+.Grid--withGutters{}
+.GridCell{}
+
+.Icon{}
+
+.Label{}
+.Label--info{}
+.Label--success{}
+.Label--warning{}
+.Label--danger{}
+
+.Modal{}
+.Modal-header{}
+.Modal-title{}
+.Modal-body{}
+.Modal-footer{}
+
+.NavGroup{}
+.NavGroup--title{}
+
+.Nav{}
+.Nav--banner{}
+.Nav--column{}
+.Nav--breadcrumbs{}
+.Nav--keywords{}
+.Nav--tabs{}
+.Nav--pills{}
+
+.Nav-item{}
+
+.Page{}
+.Page-header{}
+.Page-title{}
+.Page-body{}
+.Page-footer{}
+
+.Panel{}
+.Panel-title{}
+.Panel-header{}
+.Panel-body{}
+.Panel-footer{}
+
+.ProgressBar{}
+.ProgressBar-meter{}
+.ProgressBar-meterLabel{}
+
+.Sheet{}
+.Sheet-header{}
+.Sheet-title{}
+.Sheet-body{}
+.Sheet-footer{}
+
+.Seperator{}
+
+.Thumbnail{}
+
+.Toolbar{}
+.Toolbar--primary{}
+
+.Table{}
+.Table--tight{}
+.Table--bordered{}
+.Table--striped{}
+.Table--data{}
+.Table--description{}
+.Table--summary{}
+
+.TableRow{}
+.TableRow--info{}
+.TableRow--success{}
+.TableRow--warning{}
+.TableRow--danger{}
+
+.TableCell{}
+.TableCell--info{}
+.TableCell--success{}
+.TableCell--warning{}
+.TableCell--danger{}
+
+.Tooltip{}
