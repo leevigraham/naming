@@ -3,28 +3,30 @@
  */
 
 // Colours. Example green:
-$green-lightest:        #89B100;
-$green-lighter:         #d4df48;
-$green-light:           #bfd03f;
-$green:                 #a9c036;
-$green-dark:            #94b02d;
-$green-darker:          #768d24;
-$green-darkest:         #596a1b;
-$green-quiet:           mix($green, white , 10);
-$green-quiet-border:    $green;
+
+// See: http://erskinedesign.com/blog/friendlier-colour-names-sass-maps
+$green-x-dark:       #89B100;
+$green-dark:         #d4df48;
+$green-mid-dark:     #bfd03f;
+$green-base:         #a9c036;
+$green-mid-light:    #94b02d;
+$green-light:        #768d24;
+$green-x-light:      #596a1b;
+$green-quiet:        mix($green, white , 10);
+$green-quiet-border: mix($green, white , 20);
 
 // Spacing
 $spacing-xxsmall:   2px;
 $spacing-xsmall:    4px;
 $spacing-small:     8px;
-$spacing-medium:    16px;
+$spacing-base:      16px;
 $spacing-large:     32px;
 $spacing-xlarge:    64px;
 $spacing-xxlarge:   128px;
 
 $lineHeight-xsmall: 1;
 $lineHeight-small:  1.25;
-$lineHeight-medium: 1.5;
+$lineHeight-base:   1.5;
 $lineHeight-large:  1.75;
 $lineHeight-xlarge: 2;
 
@@ -32,7 +34,7 @@ $lineHeight-xlarge: 2;
 $fontSize-xxsmall:  9px;
 $fontSize-xsmall:   10px;
 $fontSize-small:    13px;
-$fontSize-medium:   16px;
+$fontSize-base:     16px;
 $fontSize-large:    20px;
 $fontSize-xlarge:   24px;
 $fontSize-xxlarge:  32px;
